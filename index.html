@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta CTV | Brandmand - Kimberly Clark</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#03152c] text-white font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- CAPA DE FONDO CON GRADIENTES Y DEGRADADO -->
+  <div class="relative overflow-hidden">
+    <!-- Formas degradadas de fondo (Abstract blue glow) -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 left-0 w-80 h-80 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- HEADER DE BRANDMAND -->
+    <header class="relative z-20 max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <!-- Logo y Tagline -->
+      <div class="flex items-center gap-4">
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-white leading-none">
+            brandmand
+          </span>
+          <span class="text-[9px] text-slate-400 font-medium tracking-widest uppercase mt-0.5">Paid media services</span>
+        </div>
+        <span class="text-slate-600 font-light text-lg">|</span>
+        <span class="text-slate-300 text-sm font-medium tracking-wide">Propuesta CTV</span>
+      </div>
+
+      <!-- Acciones Header (Selector de Moneda) -->
+      <div class="flex items-center gap-4">
+        <div class="inline-flex p-1 bg-[#072140] border border-slate-700/60 rounded-xl text-xs">
+          <button id="btn-mxn" onclick="setCurrency('MXN')" class="px-3 py-1.5 rounded-lg bg-sky-500 text-white font-bold transition shadow-md">MXN</button>
+          <button id="btn-usd" onclick="setCurrency('USD')" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold transition">USD</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION CON IMAGEN DE LA MARCA DE FONDO -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-12">
+      <!-- Contenedor con Imagen de fondo + Overlay Gradiente -->
+      <div class="relative rounded-3xl overflow-hidden p-8 md:p-12 border border-slate-800/80 bg-slate-900/40">
+        
+        <!-- Imagen de la marca/tienda/auto de fondo con opacidad y mascara -->
+        <div class="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1600&q=80" 
+               alt="Fondo Cliente" 
+               class="w-full h-full object-cover opacity-15 mix-blend-luminosity">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#03152c] via-[#03152c]/90 to-transparent"></div>
+        </div>
+
+        <!-- Contenido Hero sobrepuesto -->
+        <div class="relative z-10 max-w-3xl">
+          
+          <!-- Badge / Marca Objetivo -->
+          <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 backdrop-blur-md mb-6">
+            <span class="text-xs font-semibold text-slate-300">Cliente Especial:</span>
+            <span class="text-xs font-bold text-sky-400 tracking-wide uppercase">Kimberly-Clark</span>
+          </div>
+
+          <!-- Título Principal -->
+          <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            Atención premium. Alcance inteligente. Resultados medibles.
+          </h1>
+
+          <!-- Descripción del Proyecto -->
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-2xl font-light">
+            Una estrategia de Connected TV diseñada para construir memoria de marca, ampliar cobertura y conectar exposición con acción — preparada para <strong class="font-semibold text-white">Kimberly-Clark</strong>[cite: 1].
+          </p>
+
+          <!-- Botones de Acción -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#propuestas" class="bg-[#38bdf8] hover:bg-[#0284c7] text-[#03152c] font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-sky-500/20">
+              Ver propuestas ›
+            </a>
+            <a href="#simulador" class="bg-[#072140]/80 hover:bg-[#072140] border border-slate-600/60 text-white font-medium text-sm px-6 py-3.5 rounded-xl transition backdrop-blur-sm">
+              Probar simulador de inversión
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICAS / KPIS (GRID DE 4 TARJETAS) -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 pb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-800/60 rounded-2xl overflow-hidden border border-slate-800/80 backdrop-blur-md">
+        
+        <!-- KPI 1 -->
+        <div class="p-6 bg-[#051c38]/90">
+          <p class="text-3xl font-black text-white tracking-tight mb-1">
+            <span class="val-kpi" data-mxn="$3,000,000" data-usd="$150,000">$3,000,000</span>
+          </p>
+          <p class="text-xs font-medium text-slate-400">Inversión neta mínima (<span class="currency-label">MXN</span>)[cite: 1]</p>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="p-6 bg-[#051c38]/90">
+          <p class="text-3xl font-black text-white tracking-tight mb-1">9,230,769</p>
+          <p class="text-xs font-medium text-slate-400">Impresiones estimadas (Propuesta 2)[cite: 1]</p>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="p-6 bg-[#051c38]/90">
+          <p class="text-3xl font-black text-white tracking-tight mb-1">4</p>
+          <p class="text-xs font-medium text-slate-400">Plataformas CTV prioritarias[cite: 1]</p>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="p-6 bg-[#051c38]/90">
+          <p class="text-3xl font-black text-sky-400 tracking-tight mb-1">4.0</p>
+          <p class="text-xs font-medium text-slate-400">Frecuencia planeada por usuario[cite: 1]</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function setCurrency(curr) {
+      const btnMxn = document.getElementById('btn-mxn');
+      const btnUsd = document.getElementById('btn-usd');
+      const kpis = document.querySelectorAll('.val-kpi');
+      const labels = document.querySelectorAll('.currency-label');
+
+      if (curr === 'USD') {
+        btnUsd.className = "px-3 py-1.5 rounded-lg bg-sky-500 text-white font-bold transition shadow-md";
+        btnMxn.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold transition";
+        kpis.forEach(k => k.textContent = k.dataset.usd);
+        labels.forEach(l => l.textContent = 'USD');
+      } else {
+        btnMxn.className = "px-3 py-1.5 rounded-lg bg-sky-500 text-white font-bold transition shadow-md";
+        btnUsd.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white font-bold transition";
+        kpis.forEach(k => k.textContent = k.dataset.mxn);
+        labels.forEach(l => l.textContent = 'MXN');
+      }
+    }
+  </script>
+</body>
+</html>
