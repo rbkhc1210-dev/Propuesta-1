@@ -3777,3 +3777,364 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta Económica & Simulador | Brandmand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+    }
+    .platform-row {
+      transition: all 0.2s ease;
+    }
+    .platform-row:hover {
+      background-color: rgba(56, 189, 248, 0.1) !important;
+    }
+    /* Estilo del slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      background: #1e293b;
+      border-radius: 9999px;
+      border: 1px solid #334155;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 15px #38bdf8;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7px;
+      transition: transform 0.15s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body class="bg-[#020b18] text-white font-sans antialiased selection:bg-sky-500 selection:text-white min-h-screen">
+
+  <div class="relative overflow-hidden py-6 sm:py-12">
+    <!-- LUZ DE FONDO -->
+    <div class="absolute -top-20 left-1/3 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <main class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- ENCABEZADO RESTAURADO -->
+      <div id="headerSimulador" class="mb-8">
+        <span class="text-xs font-mono text-sky-400 tracking-widest uppercase block mb-2">SIMULADOR DE INVERSIÓN</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+          Explora el modelo CPM blended (Propuesta 2).
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base max-w-3xl leading-relaxed">
+          Mueve el presupuesto entre <strong class="text-sky-400 font-bold">$2,000,000</strong> y <strong class="text-sky-400 font-bold">$4,000,000</strong> y observa cómo se redistribuyen inversión e impresiones por plataforma. El CPM se mantiene fijo en <strong class="text-sky-400 font-bold">$325</strong>.
+        </p>
+      </div>
+
+      <!-- BOTONES DE PESTAÑAS -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-8">
+        <button id="btnProp1" type="button" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white font-semibold text-xs sm:text-sm border border-slate-800 backdrop-blur-md transition-all flex items-center justify-center gap-2">
+          <span id="dot1" class="w-2 h-2 rounded-full bg-sky-400 hidden"></span>
+          Propuesta 1 · Costo directo
+        </button>
+        <button id="btnProp2" type="button" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-sky-500 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-sky-500/20 border border-sky-400 flex items-center justify-center gap-2 transition-all">
+          <span id="dot2" class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
+          Propuesta 2 · CPM Blended & Simulador
+        </button>
+      </div>
+
+      <!-- ==================== VISTA 1 ==================== -->
+      <div id="viewPropuesta1" class="hidden transition-all duration-300">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+          <div class="glass-card p-6 rounded-3xl border border-slate-800">
+            <span class="text-xs font-mono text-slate-400 uppercase block mb-1">Gran total de inversión</span>
+            <div class="text-3xl lg:text-4xl font-black text-white">$3,600,000</div>
+          </div>
+          <div class="glass-card p-6 rounded-3xl border border-slate-800">
+            <span class="text-xs font-mono text-slate-400 uppercase block mb-1">Impresiones totales</span>
+            <div class="text-3xl lg:text-4xl font-black text-white">7,383,247</div>
+          </div>
+          <div class="glass-card p-6 rounded-3xl border border-slate-800">
+            <span class="text-xs font-mono text-slate-400 uppercase block mb-1">CPM efectivo</span>
+            <div class="text-3xl lg:text-4xl font-black text-sky-400">$487.64</div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl mb-8 shadow-2xl">
+          <table class="w-full text-left border-collapse min-w-[600px]">
+            <thead>
+              <tr class="bg-slate-950/90 text-sky-400 font-mono text-xs uppercase border-b border-slate-800">
+                <th class="py-4 px-6">Plataforma</th>
+                <th class="py-4 px-6">CPM</th>
+                <th class="py-4 px-6">Inversión</th>
+                <th class="py-4 px-6">Impresiones</th>
+                <th class="py-4 px-6">VCR</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-sm">
+              <tr class="platform-row">
+                <td class="py-4 px-6 font-bold text-white">Netflix</td>
+                <td class="py-4 px-6 font-mono text-slate-300">$355</td>
+                <td class="py-4 px-6 text-slate-300">$750,000</td>
+                <td class="py-4 px-6 font-mono text-slate-300">2,112,676</td>
+                <td class="py-4 px-6 font-bold text-sky-400">96.0%</td>
+              </tr>
+              <tr class="platform-row">
+                <td class="py-4 px-6 font-bold text-white">Disney+</td>
+                <td class="py-4 px-6 font-mono text-slate-300">$355</td>
+                <td class="py-4 px-6 text-slate-300">$750,000</td>
+                <td class="py-4 px-6 font-mono text-slate-300">2,112,676</td>
+                <td class="py-4 px-6 font-bold text-sky-400">95.0%</td>
+              </tr>
+              <tr class="platform-row">
+                <td class="py-4 px-6 font-bold text-white">HBO Max</td>
+                <td class="py-4 px-6 font-mono text-slate-300">$475</td>
+                <td class="py-4 px-6 text-slate-300">$750,000</td>
+                <td class="py-4 px-6 font-mono text-slate-300">1,578,947</td>
+                <td class="py-4 px-6 font-bold text-sky-400">95.0%</td>
+              </tr>
+              <tr class="platform-row">
+                <td class="py-4 px-6 font-bold text-white">Prime Video</td>
+                <td class="py-4 px-6 font-mono text-slate-300">$475</td>
+                <td class="py-4 px-6 text-slate-300">$750,000</td>
+                <td class="py-4 px-6 font-mono text-slate-300">1,578,947</td>
+                <td class="py-4 px-6 font-bold text-sky-400">94.0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== VISTA 2 (SIMULADOR) ==================== -->
+      <div id="viewPropuesta2" class="transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+          
+          <!-- PANEL DEL SLIDER -->
+          <div class="lg:col-span-5 glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col justify-between shadow-2xl">
+            <div>
+              <div class="space-y-6 mb-8">
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Presupuesto total</span>
+                  <div id="simTotalBudget" class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">$3,050,000</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800/80">
+                  <div>
+                    <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase block mb-1">Impresiones estimadas</span>
+                    <div id="simTotalImpressions" class="text-xl sm:text-2xl font-bold text-sky-300">9,384,615</div>
+                  </div>
+                  <div>
+                    <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase block mb-1">CPM fijo</span>
+                    <div class="text-xl sm:text-2xl font-bold text-sky-400">$325.00</div>
+                  </div>
+                </div>
+              </div>
+
+              <button id="btnResetSim" type="button" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center justify-center gap-2 mb-6">
+                <span>↺</span> Restablecer recomendación
+              </button>
+
+              <div class="space-y-3 bg-slate-950/70 p-5 rounded-2xl border border-slate-800">
+                <div class="flex justify-between items-center text-xs font-mono">
+                  <span class="text-slate-300 font-bold">Presupuesto total (MXN)</span>
+                  <span id="sliderBadge" class="text-sky-400 font-bold bg-sky-500/10 px-2.5 py-0.5 rounded-full border border-sky-500/20">$3,050,000</span>
+                </div>
+
+                <input 
+                  type="range" 
+                  id="budgetRange" 
+                  min="2000000" 
+                  max="4000000" 
+                  step="25000" 
+                  value="3050000" 
+                />
+
+                <div class="flex justify-between text-[11px] font-mono text-slate-400 pt-1">
+                  <span>$2,000,000</span>
+                  <span>$4,000,000</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-slate-400 mt-6 leading-relaxed">
+              La mezcla porcentual por plataforma se mantiene fija (recomendación de Brandmand); el simulador escala el presupuesto total manteniendo el CPM comercial de $325.
+            </p>
+          </div>
+
+          <!-- TABLA DINÁMICA -->
+          <div class="lg:col-span-7 overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/50 backdrop-blur-xl shadow-2xl">
+            <table class="w-full text-left border-collapse min-w-[500px]">
+              <thead>
+                <tr class="bg-slate-950/90 text-sky-400 font-mono text-xs uppercase border-b border-slate-800">
+                  <th class="py-4 px-5">Plataforma</th>
+                  <th class="py-4 px-4 text-center">% Mezcla</th>
+                  <th class="py-4 px-5 text-right">Inversión</th>
+                  <th class="py-4 px-5 text-right">Impresiones</th>
+                  <th class="py-4 px-4 text-center">VCR est.</th>
+                </tr>
+              </thead>
+              <tbody id="simTableBody" class="divide-y divide-slate-800/60 text-xs sm:text-sm">
+                <!-- Generado por JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    (function() {
+      const platforms = [
+        { name: "Netflix", share: 0.30, vcr: "96.0%", color: "bg-red-500" },
+        { name: "Disney+", share: 0.15, vcr: "95.0%", color: "bg-blue-500" },
+        { name: "HBO Max", share: 0.14, vcr: "95.0%", color: "bg-purple-500" },
+        { name: "Prime Video", share: 0.12, vcr: "94.0%", color: "bg-cyan-400" },
+        { name: "TelevisaUnivision", share: 0.10, vcr: "90.0%", color: "bg-slate-400" },
+        { name: "Roku", share: 0.07, vcr: "92.0%", color: "bg-slate-400" },
+        { name: "ViX", share: 0.07, vcr: "90.0%", color: "bg-slate-400" },
+        { name: "Pluto TV", share: 0.02, vcr: "88.0%", color: "bg-slate-400" },
+        { name: "Samsung TV Plus", share: 0.02, vcr: "89.0%", color: "bg-slate-400" },
+        { name: "LG Channels", share: 0.01, vcr: "88.0%", color: "bg-slate-400" }
+      ];
+
+      const CPM_VAL = 325;
+
+      function formatMXN(val) {
+        return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(val);
+      }
+
+      function formatNum(val) {
+        return new Intl.NumberFormat('es-MX', { maximumFractionDigits: 0 }).format(Math.round(val));
+      }
+
+      function runSimulation(amount) {
+        const budget = parseFloat(amount);
+        const totalBudgetEl = document.getElementById('simTotalBudget');
+        const badgeEl = document.getElementById('sliderBadge');
+        const totalImpEl = document.getElementById('simTotalImpressions');
+        const tbody = document.getElementById('simTableBody');
+
+        if (!tbody) return;
+
+        if (totalBudgetEl) totalBudgetEl.innerText = formatMXN(budget);
+        if (badgeEl) badgeEl.innerText = formatMXN(budget);
+        
+        const totalImp = budget / CPM_VAL;
+        if (totalImpEl) totalImpEl.innerText = formatNum(totalImp);
+
+        tbody.innerHTML = '';
+
+        platforms.forEach(item => {
+          const inv = budget * item.share;
+          const imp = inv / CPM_VAL;
+          const lowWarning = inv < 60000;
+
+          const tr = document.createElement('tr');
+          tr.className = "platform-row font-medium border-b border-slate-800/40";
+          tr.innerHTML = `
+            <td class="py-3.5 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full ${item.color} inline-block"></span>
+              ${item.name}
+            </td>
+            <td class="py-3.5 px-4 text-center font-mono text-slate-300">${(item.share * 100)}%</td>
+            <td class="py-3.5 px-5 text-right font-mono text-slate-200">
+              ${formatMXN(inv)}
+              ${lowWarning ? `<div class="text-[10px] text-amber-400 font-semibold flex items-center justify-end gap-1 mt-0.5">⚠️ Menor a $60,000</div>` : ''}
+            </td>
+            <td class="py-3.5 px-5 text-right font-mono text-slate-300">${formatNum(imp)}</td>
+            <td class="py-3.5 px-4 text-center font-bold text-sky-400">${item.vcr}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function switchTab(num) {
+        const p1 = document.getElementById('viewPropuesta1');
+        const p2 = document.getElementById('viewPropuesta2');
+        const b1 = document.getElementById('btnProp1');
+        const b2 = document.getElementById('btnProp2');
+        const d1 = document.getElementById('dot1');
+        const d2 = document.getElementById('dot2');
+        const headerSim = document.getElementById('headerSimulador');
+
+        if (!p1 || !p2) return;
+
+        if (num === 1) {
+          p1.classList.remove('hidden');
+          p2.classList.add('hidden');
+          if (headerSim) headerSim.classList.add('hidden');
+          b1.className = "w-full sm:w-auto px-6 py-3 rounded-2xl bg-sky-500 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-sky-500/20 border border-sky-400 flex items-center justify-center gap-2 transition-all";
+          b2.className = "w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white font-semibold text-xs sm:text-sm border border-slate-800 backdrop-blur-md transition-all flex items-center justify-center gap-2";
+          d1.classList.remove('hidden');
+          d2.classList.add('hidden');
+        } else {
+          p1.classList.add('hidden');
+          p2.classList.remove('hidden');
+          if (headerSim) headerSim.classList.remove('hidden');
+          b2.className = "w-full sm:w-auto px-6 py-3 rounded-2xl bg-sky-500 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-sky-500/20 border border-sky-400 flex items-center justify-center gap-2 transition-all";
+          b1.className = "w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white font-semibold text-xs sm:text-sm border border-slate-800 backdrop-blur-md transition-all flex items-center justify-center gap-2";
+          d2.classList.remove('hidden');
+          d1.classList.add('hidden');
+        }
+      }
+
+      function resetSim() {
+        const slider = document.getElementById('budgetRange');
+        if (slider) {
+          slider.value = 3050000;
+          runSimulation(3050000);
+        }
+      }
+
+      function init() {
+        const slider = document.getElementById('budgetRange');
+        const btn1 = document.getElementById('btnProp1');
+        const btn2 = document.getElementById('btnProp2');
+        const btnReset = document.getElementById('btnResetSim');
+
+        if (slider) {
+          ['input', 'change', 'mousemove', 'touchmove'].forEach(evt => {
+            slider.addEventListener(evt, function(e) {
+              runSimulation(e.target.value);
+            });
+          });
+        }
+
+        if (btn1) btn1.addEventListener('click', function() { switchTab(1); });
+        if (btn2) btn2.addEventListener('click', function() { switchTab(2); });
+        if (btnReset) btnReset.addEventListener('click', function() { resetSim(); });
+
+        runSimulation(slider ? slider.value : 3050000);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+</body>
+</html>
