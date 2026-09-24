@@ -477,13 +477,13 @@
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .node-priority:hover {
-      transform: translateY(-6px) scale(1.03);
+      transform: translateY(-6px) scale(1.02);
       box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
       border-color: #38bdf8;
     }
     .node-scale:hover {
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 0 20px rgba(148, 163, 184, 0.25);
+      box-shadow: 0 0 25px rgba(148, 163, 184, 0.25);
       border-color: rgba(56, 189, 248, 0.5);
       background-color: rgba(15, 23, 42, 0.9);
     }
@@ -520,7 +520,7 @@
       <!-- ECOSISTEMA DINÁMICO DE NODOS -->
       <div class="space-y-12">
         
-        <!-- BLOQUE 1: NUCLEO PRIORITARIO (NODOS GRANDES EN PÍLDORA CON ORBITA) -->
+        <!-- BLOQUE 1: NÚCLEO PRINCIPAL (PLATAFORMAS CLAVE) -->
         <div>
           <div class="flex items-center gap-3 mb-8">
             <span class="relative flex h-3 w-3">
@@ -528,7 +528,7 @@
               <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
             </span>
             <h2 class="text-xs font-mono tracking-widest text-sky-400 uppercase font-bold">
-              Núcleo de Plataformas Prioritarias (Exigidas)
+              Plataformas Exigidas / Principales
             </h2>
           </div>
 
@@ -536,84 +536,64 @@
             
             <!-- NETFLIX -->
             <div class="node-card node-priority p-6 rounded-3xl bg-gradient-to-r from-sky-950/50 via-slate-900/80 to-slate-900/90 border border-sky-500/50 backdrop-blur-xl relative cursor-pointer flex items-center justify-between">
-              <div class="space-y-1">
-                <span class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[10px] font-mono tracking-wider uppercase font-bold">
-                  PRIORITARIA
-                </span>
-                <h3 class="text-3xl font-black text-white pt-2">Netflix</h3>
-              </div>
-              <div class="flex items-center gap-3 bg-slate-950/70 py-2.5 px-4 rounded-2xl border border-slate-800">
+              <h3 class="text-3xl font-black text-white">Netflix</h3>
+              <div class="flex items-center gap-4 bg-slate-950/70 py-2.5 px-5 rounded-2xl border border-slate-800">
                 <div class="text-right">
                   <span class="text-[10px] font-mono text-slate-400 block">CPM</span>
-                  <span class="text-base font-bold text-white">$325</span>
+                  <span class="text-lg font-bold text-white">$325</span>
                 </div>
-                <div class="h-7 w-[1px] bg-slate-800"></div>
+                <div class="h-8 w-[1px] bg-slate-800"></div>
                 <div class="text-left">
                   <span class="text-[10px] font-mono text-slate-400 block">VCR</span>
-                  <span class="text-base font-bold text-sky-400">96.0%</span>
+                  <span class="text-lg font-bold text-sky-400">96.0%</span>
                 </div>
               </div>
             </div>
 
             <!-- DISNEY+ -->
             <div class="node-card node-priority p-6 rounded-3xl bg-gradient-to-r from-sky-950/50 via-slate-900/80 to-slate-900/90 border border-sky-500/50 backdrop-blur-xl relative cursor-pointer flex items-center justify-between">
-              <div class="space-y-1">
-                <span class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[10px] font-mono tracking-wider uppercase font-bold">
-                  PRIORITARIA
-                </span>
-                <h3 class="text-3xl font-black text-white pt-2">Disney+</h3>
-              </div>
-              <div class="flex items-center gap-3 bg-slate-950/70 py-2.5 px-4 rounded-2xl border border-slate-800">
+              <h3 class="text-3xl font-black text-white">Disney+</h3>
+              <div class="flex items-center gap-4 bg-slate-950/70 py-2.5 px-5 rounded-2xl border border-slate-800">
                 <div class="text-right">
                   <span class="text-[10px] font-mono text-slate-400 block">CPM</span>
-                  <span class="text-base font-bold text-white">$325</span>
+                  <span class="text-lg font-bold text-white">$325</span>
                 </div>
-                <div class="h-7 w-[1px] bg-slate-800"></div>
+                <div class="h-8 w-[1px] bg-slate-800"></div>
                 <div class="text-left">
                   <span class="text-[10px] font-mono text-slate-400 block">VCR</span>
-                  <span class="text-base font-bold text-sky-400">95.0%</span>
+                  <span class="text-lg font-bold text-sky-400">95.0%</span>
                 </div>
               </div>
             </div>
 
             <!-- HBO MAX -->
             <div class="node-card node-priority p-6 rounded-3xl bg-gradient-to-r from-sky-950/50 via-slate-900/80 to-slate-900/90 border border-sky-500/50 backdrop-blur-xl relative cursor-pointer flex items-center justify-between">
-              <div class="space-y-1">
-                <span class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[10px] font-mono tracking-wider uppercase font-bold">
-                  PRIORITARIA
-                </span>
-                <h3 class="text-3xl font-black text-white pt-2">HBO Max</h3>
-              </div>
-              <div class="flex items-center gap-3 bg-slate-950/70 py-2.5 px-4 rounded-2xl border border-slate-800">
+              <h3 class="text-3xl font-black text-white">HBO Max</h3>
+              <div class="flex items-center gap-4 bg-slate-950/70 py-2.5 px-5 rounded-2xl border border-slate-800">
                 <div class="text-right">
                   <span class="text-[10px] font-mono text-slate-400 block">CPM</span>
-                  <span class="text-base font-bold text-white">$325</span>
+                  <span class="text-lg font-bold text-white">$325</span>
                 </div>
-                <div class="h-7 w-[1px] bg-slate-800"></div>
+                <div class="h-8 w-[1px] bg-slate-800"></div>
                 <div class="text-left">
                   <span class="text-[10px] font-mono text-slate-400 block">VCR</span>
-                  <span class="text-base font-bold text-sky-400">95.0%</span>
+                  <span class="text-lg font-bold text-sky-400">95.0%</span>
                 </div>
               </div>
             </div>
 
             <!-- PRIME VIDEO -->
             <div class="node-card node-priority p-6 rounded-3xl bg-gradient-to-r from-sky-950/50 via-slate-900/80 to-slate-900/90 border border-sky-500/50 backdrop-blur-xl relative cursor-pointer flex items-center justify-between">
-              <div class="space-y-1">
-                <span class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[10px] font-mono tracking-wider uppercase font-bold">
-                  PRIORITARIA
-                </span>
-                <h3 class="text-3xl font-black text-white pt-2">Prime Video</h3>
-              </div>
-              <div class="flex items-center gap-3 bg-slate-950/70 py-2.5 px-4 rounded-2xl border border-slate-800">
+              <h3 class="text-3xl font-black text-white">Prime Video</h3>
+              <div class="flex items-center gap-4 bg-slate-950/70 py-2.5 px-5 rounded-2xl border border-slate-800">
                 <div class="text-right">
                   <span class="text-[10px] font-mono text-slate-400 block">CPM</span>
-                  <span class="text-base font-bold text-white">$325</span>
+                  <span class="text-lg font-bold text-white">$325</span>
                 </div>
-                <div class="h-7 w-[1px] bg-slate-800"></div>
+                <div class="h-8 w-[1px] bg-slate-800"></div>
                 <div class="text-left">
                   <span class="text-[10px] font-mono text-slate-400 block">VCR</span>
-                  <span class="text-base font-bold text-sky-400">94.0%</span>
+                  <span class="text-lg font-bold text-sky-400">94.0%</span>
                 </div>
               </div>
             </div>
@@ -621,74 +601,92 @@
           </div>
         </div>
 
-        <!-- BLOQUE 2: CANALES DE ESCALA (CÁPSULAS ORBITALES) -->
+        <!-- BLOQUE 2: CANALES DE ESCALA (MÁS GRANDES EN 2 NIVELES / 3 COLUMNAS) -->
         <div>
           <div class="flex items-center gap-3 mb-6">
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
             <h2 class="text-xs font-mono tracking-widest text-slate-400 uppercase font-bold">
               Canales de Escala Incremental
             </h2>
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             
             <!-- TELEVISAUNIVISION -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">TelevisaUnivision</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">90%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">TelevisaUnivision</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 90.0%
+                </span>
               </div>
             </div>
 
             <!-- ROKU -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">Roku</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">92%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">Roku</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 92.0%
+                </span>
               </div>
             </div>
 
             <!-- VIX -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">ViX</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">90%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">ViX</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 90.0%
+                </span>
               </div>
             </div>
 
             <!-- PLUTO TV -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">Pluto TV</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">88%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">Pluto TV</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 88.0%
+                </span>
               </div>
             </div>
 
             <!-- SAMSUNG TV PLUS -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">Samsung TV Plus</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">89%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">Samsung TV Plus</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 89.0%
+                </span>
               </div>
             </div>
 
             <!-- LG CHANNELS -->
-            <div class="node-card node-scale p-4 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-md cursor-pointer text-center">
-              <span class="text-[9px] font-mono tracking-wider text-slate-500 uppercase block mb-1">ESCALA</span>
-              <h4 class="text-sm font-bold text-slate-200 mb-2 truncate">LG Channels</h4>
-              <div class="text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 flex justify-around">
-                <span>$325</span>
-                <span class="text-slate-300">88%</span>
+            <div class="node-card node-scale p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md cursor-pointer flex items-center justify-between">
+              <h4 class="text-xl font-bold text-slate-100">LG Channels</h4>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">CPM:</strong> $325
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
+                  <strong class="text-slate-400 font-normal">VCR:</strong> 88.0%
+                </span>
               </div>
             </div>
 
