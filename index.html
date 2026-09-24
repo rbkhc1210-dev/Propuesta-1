@@ -150,3 +150,206 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategia & Plataformas Dinámicas | Brandmand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#020b18] text-white font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- CAPA DE FONDO DINÁMICA CON DIFUMINADO AZUL -->
+  <div class="relative overflow-hidden min-h-screen pb-16 pt-8">
+    
+    <!-- Luces dinámicas de fondo -->
+    <div class="absolute -top-20 left-1/4 w-[500px] h-[500px] bg-sky-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+    <div class="absolute top-1/3 -right-20 w-[600px] h-[600px] bg-blue-600/25 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="relative z-20 max-w-7xl mx-auto px-6">
+      
+      <!-- ENCABEZADO DE SECCIÓN -->
+      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-3 backdrop-blur-sm">
+            Página 02 — Estrategia Dinámica
+          </span>
+          <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">
+            Ecosistema CTV & <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-500">Distribución Modular</span>
+          </h2>
+        </div>
+
+        <!-- FILTROS DINÁMICOS DE AUDIENCIA -->
+        <div class="flex flex-wrap gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-slate-800 backdrop-blur-md">
+          <button onclick="filterAudience('all')" id="btn-all" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-sky-500 text-white shadow-md">Todas</button>
+          <button onclick="filterAudience('family')" id="btn-family" class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white">Hogares y Familias</button>
+          <button onclick="filterAudience('intent')" id="btn-intent" class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white">Intención de Compra</button>
+          <button onclick="filterAudience('mass')" id="btn-mass" class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white">Cobertura Masiva</button>
+        </div>
+      </div>
+
+      <!-- GRID DE PLATAFORMAS DINÁMICAS CON FILTRADO -->
+      <div id="platforms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        
+        <!-- CARD 1 -->
+        <div class="card-item family group relative rounded-2xl p-6 bg-slate-900/60 border border-slate-800/80 backdrop-blur-lg hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Premium SVOD</span>
+            <span class="px-2.5 py-1 rounded-md bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold">Netflix</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Entorno Inmersivo</h3>
+          <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+            Impacto de alta visibilidad en contenidos top con audiencias cautivas y baja saturación.
+          </p>
+          <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Enfoque:</span>
+            <span class="font-semibold text-sky-300">Branding & Attention</span>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card-item family group relative rounded-2xl p-6 bg-slate-900/60 border border-slate-800/80 backdrop-blur-lg hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Familiar & Kids</span>
+            <span class="px-2.5 py-1 rounded-md bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs font-bold">Disney+</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Co-viewing Familiar</h3>
+          <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+            Conexión con padres y tomadores de decisión en entorno seguro de marca.
+          </p>
+          <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Enfoque:</span>
+            <span class="font-semibold text-sky-300">Hogares con Hijos</span>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card-item intent group relative rounded-2xl p-6 bg-slate-900/60 border border-slate-800/80 backdrop-blur-lg hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">E-Commerce Data</span>
+            <span class="px-2.5 py-1 rounded-md bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-bold">Prime Video</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Hábitos de Compra</h3>
+          <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+            Potenciado con datos de retail/shopping para activar audiencias con alta intención.
+          </p>
+          <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Enfoque:</span>
+            <span class="font-semibold text-sky-300">Conversion / Retail</span>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card-item mass group relative rounded-2xl p-6 bg-slate-900/60 border border-slate-800/80 backdrop-blur-lg hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Escala Masiva</span>
+            <span class="px-2.5 py-1 rounded-md bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold">YouTube CTV</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Máxima Cobertura</h3>
+          <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
+            Construcción de alcance incremental en pantalla grande con optimización algorítmica.
+          </p>
+          <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Enfoque:</span>
+            <span class="font-semibold text-sky-300">Incremental Reach</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MÓDULO INTERACTIVO: SIMULADOR DE MEZCLA DE INVENTARIO -->
+      <div class="rounded-3xl p-8 border border-slate-700/50 bg-slate-900/70 shadow-2xl backdrop-blur-xl">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div>
+            <h3 class="text-2xl font-black text-white flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-sky-400 animate-ping"></span>
+              Simulador Dinámico de Mix de Inventario
+            </h3>
+            <p class="text-slate-400 text-xs mt-1">Ajusta el control deslizante para balancear el enfoque entre Branding Premium y Alcance Masivo.</p>
+          </div>
+          <div class="text-right">
+            <span id="mix-ratio-label" class="text-xl font-extrabold text-sky-400">60% Premium / 40% Cobertura</span>
+          </div>
+        </div>
+
+        <!-- CONTROL SLIDER -->
+        <div class="mb-8">
+          <input id="mix-slider" type="range" min="20" max="80" value="60" oninput="updateMix(this.value)"
+                 class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-400">
+          <div class="flex justify-between text-xs font-semibold text-slate-500 mt-2">
+            <span>‹ Enfoque 100% Calidad / Attention</span>
+            <span>Enfoque 100% Alcance / Frecuencia ›</span>
+          </div>
+        </div>
+
+        <!-- RESULTADOS DINÁMICOS DEL SIMULADOR -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+            <div class="text-slate-400 text-xs font-medium mb-1">Entorno SVOD Premium (Netflix/Disney)</div>
+            <div id="val-premium" class="text-2xl font-black text-white">60% del Presupuesto</div>
+            <div class="text-sky-400 text-xs font-semibold mt-2">Altos niveles de atención y completitud (VTR > 95%)</div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/50">
+            <div class="text-slate-400 text-xs font-medium mb-1">Plataformas de Escala (YouTube CTV / FAST)</div>
+            <div id="val-reach" class="text-2xl font-black text-white">40% del Presupuesto</div>
+            <div class="text-cyan-300 text-xs font-semibold mt-2">Maximización de hogares únicos alcanzados</div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/40 border border-sky-500/30 bg-sky-500/5">
+            <div class="text-slate-400 text-xs font-medium mb-1">Índice Estimado de Retención (Ad Recall)</div>
+            <div id="val-recall" class="text-2xl font-black text-sky-400">+38% VS TV Tradicional</div>
+            <div class="text-slate-300 text-xs mt-2">Frecuencia recomendada: 3.5x a 4.0x</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPT DINÁMICO -->
+  <script>
+    // Filtro de Audiencias Dinámico
+    function filterAudience(category) {
+      const cards = document.querySelectorAll('.card-item');
+      const buttons = ['all', 'family', 'intent', 'mass'];
+
+      buttons.forEach(btn => {
+        const el = document.getElementById(`btn-${btn}`);
+        if (btn === category) {
+          el.className = "px-4 py-2 rounded-xl text-xs font-bold transition bg-sky-500 text-white shadow-md";
+        } else {
+          el.className = "px-4 py-2 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white";
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Simulador Dinámico de Mix de Inventario
+    function updateMix(val) {
+      const premiumPct = val;
+      const reachPct = 100 - val;
+
+      document.getElementById('mix-ratio-label').innerText = `${premiumPct}% Premium / ${reachPct}% Cobertura`;
+      document.getElementById('val-premium').innerText = `${premiumPct}% del Presupuesto`;
+      document.getElementById('val-reach').innerText = `${reachPct}% del Presupuesto`;
+
+      // Cálculo interactivo del recall estimado
+      const estimatedRecall = Math.round(20 + (premiumPct * 0.3));
+      document.getElementById('val-recall').innerText = `+${estimatedRecall}% VS TV Tradicional`;
+    }
+  </script>
+
+</body>
+</html>
