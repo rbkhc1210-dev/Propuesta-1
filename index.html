@@ -1034,3 +1034,257 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta Económica Interactiva | Brandmand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+    }
+    .platform-row {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .platform-row:hover {
+      background-color: rgba(14, 165, 233, 0.12) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px -5px rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#020b18] text-white font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+  <div class="relative overflow-hidden min-h-screen py-6 sm:py-12">
+    <!-- LUCES DE FONDO -->
+    <div class="absolute -top-20 left-1/3 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-sky-500/15 rounded-full blur-[100px] sm:blur-[130px] pointer-events-none"></div>
+
+    <main class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- ENCABEZADO -->
+      <div class="max-w-4xl mb-6 sm:mb-10 text-left">
+        <span class="block text-slate-400 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2">
+          04 . PROPUESTA ECONÓMICA
+        </span>
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-3">
+          Dos estructuras de inversión, <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-500">un mismo objetivo.</span>
+        </h1>
+        <p class="text-slate-300 text-xs sm:text-base md:text-lg font-light">
+          Compara el costo directo de plataforma contra el modelo de CPM comercial blended.
+        </p>
+      </div>
+
+      <!-- BOTONES DE PROPUESTA -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-6 sm:mb-10">
+        <button class="w-full sm:w-auto px-5 py-2.5 rounded-xl sm:rounded-2xl bg-sky-500 text-slate-950 font-bold text-xs sm:text-base shadow-lg shadow-sky-500/25 border border-sky-400 flex items-center justify-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
+          Propuesta 1 · Costo directo
+        </button>
+        <button class="w-full sm:w-auto px-5 py-2.5 rounded-xl sm:rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-white font-semibold text-xs sm:text-base border border-slate-800 backdrop-blur-md transition-all">
+          Propuesta 2 · CPM blended
+        </button>
+      </div>
+
+      <!-- TARJETAS DE MÉTRICAS -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-10">
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl">
+          <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Gran total de inversión</span>
+          <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-white">$3,600,000</div>
+        </div>
+
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl">
+          <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Impresiones totales</span>
+          <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-white">7,383,247</div>
+        </div>
+
+        <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl">
+          <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">CPM efectivo</span>
+          <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-sky-400">$487.64</div>
+        </div>
+      </div>
+
+      <!-- INSTRUCCIÓN DE INTERACCIÓN -->
+      <div class="flex items-center justify-between mb-3 text-xs text-slate-400 font-mono">
+        <span>Haz clic en una plataforma para ver el desglose detallado</span>
+        <span class="hidden sm:inline text-sky-400">⚡ Selección activa habilitada</span>
+      </div>
+
+      <!-- TABLA DINÁMICA INTERACTIVA -->
+      <div class="overflow-x-auto rounded-2xl sm:rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl mb-6 sm:mb-10 shadow-2xl">
+        <table class="w-full text-left border-collapse min-w-[650px]">
+          <thead>
+            <tr class="bg-slate-950/90 text-sky-400 font-mono text-[10px] sm:text-xs uppercase tracking-wider border-b border-slate-800">
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">Plataforma</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">CPM</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">Inversión</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">Impresiones</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">Formato</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">Frec.</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6">VCR</th>
+              <th class="py-3.5 px-4 sm:py-4 sm:px-6 text-right">Detalle</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-xs sm:text-sm font-medium">
+            
+            <!-- FILA NETFLIX -->
+            <tr onclick="showPlatformDetails('Netflix', '$355', '$750,000', '2,112,676', '15&quot;/20&quot;', '4.0', '96.0%', 'Formato Hero de alto impacto en series y películas top.')" class="platform-row cursor-pointer hover:bg-slate-800/40 group">
+              <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-500 inline-block"></span>
+                Netflix
+              </td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">$355</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-300">$750,000</td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">2,112,676</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">15"/20"</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">4.0</td>
+              <td class="py-4 px-4 sm:px-6 font-bold text-sky-400">96.0%</td>
+              <td class="py-4 px-4 sm:px-6 text-right text-sky-400 group-hover:translate-x-1 transition-transform">→</td>
+            </tr>
+
+            <!-- FILA DISNEY+ -->
+            <tr onclick="showPlatformDetails('Disney+', '$355', '$750,000', '2,112,676', '15&quot;/20&quot;', '4.0', '95.0%', 'Audiencia familiar y de entretenimiento en streaming premium.')" class="platform-row cursor-pointer hover:bg-slate-800/40 group">
+              <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
+                Disney+
+              </td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">$355</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-300">$750,000</td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">2,112,676</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">15"/20"</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">4.0</td>
+              <td class="py-4 px-4 sm:px-6 font-bold text-sky-400">95.0%</td>
+              <td class="py-4 px-4 sm:px-6 text-right text-sky-400 group-hover:translate-x-1 transition-transform">→</td>
+            </tr>
+
+            <!-- FILA HBO MAX -->
+            <tr onclick="showPlatformDetails('HBO Max', '$475', '$750,000', '1,578,947', '15&quot;/20&quot;', '4.0', '95.0%', 'Cobertura en eventos en vivo y contenidos prestige de alta retención.')" class="platform-row cursor-pointer hover:bg-slate-800/40 group">
+              <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-500 inline-block"></span>
+                HBO Max
+              </td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">$475</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-300">$750,000</td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">1,578,947</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">15"/20"</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">4.0</td>
+              <td class="py-4 px-4 sm:px-6 font-bold text-sky-400">95.0%</td>
+              <td class="py-4 px-4 sm:px-6 text-right text-sky-400 group-hover:translate-x-1 transition-transform">→</td>
+            </tr>
+
+            <!-- FILA PRIME VIDEO -->
+            <tr onclick="showPlatformDetails('Prime Video', '$475', '$750,000', '1,578,947', '15&quot;/20&quot;', '4.0', '94.0%', 'Alcance masivo ligado a perfiles de alta intención de compra.')" class="platform-row cursor-pointer hover:bg-slate-800/40 group">
+              <td class="py-4 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 inline-block"></span>
+                Prime Video
+              </td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">$475</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-300">$750,000</td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-slate-300">1,578,947</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">15"/20"</td>
+              <td class="py-4 px-4 sm:px-6 text-slate-400">4.0</td>
+              <td class="py-4 px-4 sm:px-6 font-bold text-sky-400">94.0%</td>
+              <td class="py-4 px-4 sm:px-6 text-right text-sky-400 group-hover:translate-x-1 transition-transform">→</td>
+            </tr>
+
+            <!-- TOTAL -->
+            <tr class="bg-sky-500/10 text-sky-300 font-bold border-t-2 border-sky-500/40">
+              <td class="py-4 px-4 sm:px-6 text-white uppercase text-[10px] sm:text-xs">Total</td>
+              <td class="py-4 px-4 sm:px-6"></td>
+              <td class="py-4 px-4 sm:px-6 text-white">$3,000,000</td>
+              <td class="py-4 px-4 sm:px-6 font-mono text-white">7,383,247</td>
+              <td class="py-4 px-4 sm:px-6" colspan="4"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- DESGLOSE DE INVERSIÓN -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8">
+        <div class="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-800">
+          <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Inversión neta en medios</span>
+          <div class="text-2xl sm:text-3xl font-black text-white">$3,000,000</div>
+        </div>
+
+        <div class="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-800">
+          <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">Fee de agencia Brandmand (20%)</span>
+          <div class="text-2xl sm:text-3xl font-black text-white">$600,000</div>
+        </div>
+
+        <div class="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-sky-950/60 to-slate-900/90 border border-sky-500/40">
+          <span class="text-[10px] sm:text-xs font-mono text-sky-400 uppercase tracking-wider block mb-1">Gran total de inversión</span>
+          <div class="text-2xl sm:text-3xl font-black text-sky-300">$3,600,000</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL DINÁMICO DE DETALLES DE PLATAFORMA -->
+  <div id="platformModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-slate-900 border border-sky-500/30 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold p-2">✕</button>
+      
+      <span class="text-xs font-mono text-sky-400 uppercase tracking-widest block mb-1">Detalle de Plataforma</span>
+      <h3 id="modalName" class="text-2xl sm:text-3xl font-black text-white mb-4">Plataforma</h3>
+      
+      <p id="modalDesc" class="text-slate-300 text-sm mb-6 leading-relaxed bg-slate-950/50 p-3 rounded-xl border border-slate-800">
+        Descripción detallada de la plataforma.
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 font-mono text-xs mb-6">
+        <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block mb-0.5">CPM Directo</span>
+          <span id="modalCPM" class="text-sky-300 font-bold text-base">$0</span>
+        </div>
+        <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block mb-0.5">Inversión Asignada</span>
+          <span id="modalInv" class="text-white font-bold text-base">$0</span>
+        </div>
+        <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block mb-0.5">Impresiones Estimadas</span>
+          <span id="modalImp" class="text-white font-bold text-base">0</span>
+        </div>
+        <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block mb-0.5">VCR Esperado</span>
+          <span id="modalVCR" class="text-sky-400 font-bold text-base">0%</span>
+        </div>
+      </div>
+
+      <button onclick="closeModal()" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all">
+        Cerrar vista
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function showPlatformDetails(name, cpm, inv, imp, fmt, frec, vcr, desc) {
+      document.getElementById('modalName').innerText = name;
+      document.getElementById('modalCPM').innerText = cpm;
+      document.getElementById('modalInv').innerText = inv;
+      document.getElementById('modalImp').innerText = imp;
+      document.getElementById('modalVCR').innerText = vcr;
+      document.getElementById('modalDesc').innerText = desc;
+
+      const modal = document.getElementById('platformModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('platformModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
